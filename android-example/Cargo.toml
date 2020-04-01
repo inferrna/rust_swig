@@ -14,7 +14,13 @@ log = "0.4.6"
 log-panics = "2.0"
 android_logger = "0.8"
 jni-sys = "0.3.0"
-oboe = "*"
+
+[dependencies.oboe]
+version = "*"
+features = ["generate-bindings"]
+#features = ["compile-library", "static-link"]
+#features = ["static-link"]
+#features = ["compile-library"]
 
 [build-dependencies]
 rust_swig = { path = "../macroslib" }
