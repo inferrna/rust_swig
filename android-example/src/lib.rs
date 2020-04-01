@@ -1,6 +1,8 @@
 use log::info;
 mod java_glue;
+mod play_sound;
 pub use crate::java_glue::*;
+use crate::play_sound::play_sine;
 
 // ANCHOR: rust_code
 struct Session {
@@ -26,6 +28,7 @@ impl Session {
 
     // Greeting with full, no-runtime-cost support for newlines and UTF-8
     pub fn greet(to: &str) -> String {
+        play_sine();
         format!("Hello {} ✋\nIt's a pleasure to meet you!", to)
     }
 }
